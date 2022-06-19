@@ -1,0 +1,86 @@
+// Flex -----------------
+
+.df{
+   display: flex;
+}
+
+.fdc{
+   flex-direction: column;
+}
+
+.ais {
+   align-items: flex-start;
+}
+
+.aic{
+   align-items: center;
+}
+
+.jcc{
+   justify-content: center;
+}
+
+.jcfs{
+   justify-content: flex-start;
+}
+
+.fg1 {
+   flex-grow: 1;
+}
+
+.fs1 {
+   flex-shrink: 1;
+}
+
+// Margin ----------------
+
+.ma{
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.mla{
+   margin-left: auto;
+}
+
+.mra{
+   margin-right: auto;
+}
+
+// ------------------------------
+
+.posr {
+   position: relative;
+}
+
+.w100 {
+   width: 100%;
+}
+
+.h100 {
+   height: 100%;
+}
+
+.db {
+   display: block;
+}
+
+.hidden {
+   display: none;
+}
+
+.ovh{
+   overflow: hidden;
+}
+
+.sticky {
+   position: sticky !important;
+   top: 200px;
+   @include animate;
+   &.animated {
+      top: 180px;
+   }
+   &.t140 {
+      top: 140px;
+   }
+}

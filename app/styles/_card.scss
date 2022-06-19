@@ -1,0 +1,203 @@
+.card {
+   @include flex-ss;
+   flex-direction: column;
+   align-items: stretch;
+   justify-content: stretch;
+   position: relative;
+   padding: 21px 48px;
+   padding-bottom: 0;
+   border-radius: 12px;
+   border: 4px solid $blue;
+   background: $white;
+   color: #000;
+
+   height: 100%;
+   min-height: 480px;
+   width: 320px;
+   max-width: 100%;
+   overflow: hidden;
+
+   clip-path: polygon(40px 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 40px);
+   cursor: pointer;
+
+   &::before{
+      content: "";
+      position: absolute;
+      width: 55px;
+      height: 4px;
+      background: $blue;
+      top: 15px;
+      left: -11px;
+      transform: rotate(-45deg);
+   }
+
+   &__subtitle {
+      @include text;
+      color: $gray;
+
+      margin-bottom: 5px;
+   }
+
+   &__title {
+      @include title;
+   }
+
+   &__undertitle {
+      @include subtitle;
+
+      margin-left: 3px;
+
+      margin-bottom: 15px;
+   }
+
+   &__desc {
+      @include font(1.4rem, 1.6rem);
+      color: $gray;
+   }
+
+   &__img {
+      margin-top: 24px;
+      margin-bottom: calc(-88px - 21px);
+      margin-left: calc(-48px - 24px);
+
+      max-width: 368px;
+      max-height: 360px;
+   }
+
+   &__pin {
+      @include flex-cc;
+      flex-direction: column;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+
+      background: $blue;
+      color: #fff;
+      border-radius: 50%;
+      
+      min-width: 80px;
+      min-height: 80px;
+      
+      @include font(4.2rem, 100%);
+
+      small{
+         @include font(2.1rem, 2.2rem)
+      }
+   }
+   
+   &--disabled{
+      border-color: $graytext;
+      cursor: default;
+
+      &::before{
+         background: $graytext;
+      }
+
+      .card{
+         &__subtitle,
+         &__title,
+         &__undertitle,
+         &__desc{
+            color: $graytext;
+            opacity: .5;
+         }
+
+         &__pin{
+            background: $graytext;
+         }
+
+         &__img{
+            opacity: .5;
+         }
+      }
+
+      ~ .card-legend{
+         display: none;
+
+         &--disabled{
+            display: block;
+         }
+      }
+   }
+
+   &--hovered{
+      border-color: #E52E7A;
+      &::before{
+         background: #e52e7a;
+      }
+
+      .card{
+         &__subtitle{
+            color: #e62e7a;
+         }
+
+         &__pin{
+            background: #e62e7a;
+
+         }
+      }
+
+      + .card-legend .card-legend__button{
+         color:#e62e7a;
+      }
+   }
+
+   
+   &--clicked{
+      border-color: #d91667;
+
+      &::before{
+         background: #d91667;
+      }
+
+      .card{
+         &__pin{
+            background: #d91667;
+         }
+      }
+
+      ~ .card-legend{
+         display: none;
+
+         &--clicked{
+            display: block;
+         }
+      }
+   }
+
+
+   >*:not(.card__img){
+      max-width: 100%;
+   }
+
+   &-legend{
+      max-width: 320px;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 1.3rem;
+
+      &__button{
+         color: $blue;
+         font-weight: 700;
+         text-decoration: underline;
+         text-decoration-style: dashed;
+
+         &:hover{
+            color:#e62e7a;
+         }
+      }
+
+      &--disabled{
+         display: none;
+         color: #ff6;
+      }
+
+      &--clicked{
+         display: none;
+      }
+   }
+
+   &-wrapper{
+      max-width: 100%;
+   }
+}

@@ -1,0 +1,169 @@
+// Colors
+$black: #000000;
+$white: #F2F2F2;
+$gray: #666666;
+
+$graytext: #B3B3B3;
+
+
+$blue: #1698D9;
+
+// Fonts Setting
+$userfont: "Trebuchet MS";
+
+// GRID -----------------------------------
+
+// Mobile fisrt breakpoint ---
+
+$firstXS: 577px;
+$firstMD: 768px;
+$firstLG: 992px;
+$firstXL: 1280px;
+$firstXXL: 1340px;
+$firstEXL: 1680px;
+
+// Mobile last breakpoint ---
+
+$lastXS: 576px;
+$lastMD: 767px;
+$lastLG: 991px;
+$lastXL: 1279px;
+$lastXXL: 1339px;
+$lastEXL: 1679px;
+
+@mixin font ($fz, $lh) {
+   font-size: $fz;
+   line-height: $lh;
+}
+
+@mixin text{
+   font-size: 1.6rem;
+}
+
+@mixin title {
+   font-size: 4.8rem;
+   font-weight: 700;
+}
+
+@mixin subtitle {
+   font-size: 2.4rem;
+   font-weight: 700;
+}
+
+// Mixin
+
+@mixin animate {
+   transition: all 0.3s ease;
+}
+
+@mixin flex {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.flex {
+   @include flex;
+}
+
+@mixin flex-ss {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: flex-start;
+}
+
+.flex-ss {
+   @include flex-ss;
+}
+
+@mixin flex-sc {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.flex-sc {
+   @include flex-sc;
+}
+
+@mixin flex-sfe {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: flex-end;
+}
+
+.flex-sfe {
+   @include flex-sfe;
+}
+
+@mixin flex-cs {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.flex-cs {
+   @include flex-cs;
+}
+
+@mixin flex-cc {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.flex-cc {
+   @include flex-cc;
+}
+
+@mixin flex-cfe {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.flex-cfe {
+   @include flex-cfe;
+}
+
+@mixin flex-ssb {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+
+.flex-ssb {
+   @include flex-ssb;
+}
+
+@mixin flex-csb {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.flex-csb {
+   @include flex-csb;
+}
+
+@mixin icomoon($icon) {
+   display: inline-block;
+   font-family: 'icomoon' !important;
+   speak: never;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+
+   content: $icon;
+}

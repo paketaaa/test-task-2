@@ -1,0 +1,30 @@
+.container{
+   @include flex-cc;
+   flex-direction: column;   
+   min-height: 100vh;
+
+   &__title{
+      font-family: "Exo";
+      font-size: 3.6rem;
+      text-align: center;
+
+      &--mb_24{
+         margin-bottom: 24px;
+      }
+   }
+
+   &__wrapper{
+      width: 100%;
+      @include animate;
+      @include flex-ssb;
+      align-items: flex-start;
+
+      margin-right: -80px;
+      margin-bottom: -32px;
+
+      >*{
+         margin-right: 80px;
+         margin-bottom: 32px;
+      }
+   }
+}
